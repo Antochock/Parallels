@@ -1,0 +1,151 @@
+.tabs__caption{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 21px 0px 45px 0px;
+	& li{
+		margin-right: 6px;
+		background-color: #313338;
+		font-size: 14px;
+		font-family: 'Roboto-Light';
+		cursor: pointer;
+		display: block;
+		width: 100px;
+		height: 35px;
+		line-height: 35px;
+		text-align: center;
+	}
+	& li.active{
+		background-color: #1bbc9d;
+		border-bottom: 2px solid #1f937d;
+	}
+}
+
+.tabs__content {
+  display: none;
+
+}
+.tabs__content.active {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 15px;
+  margin-bottom: 45px;
+}
+.element-description{
+	display: none;
+	position: absolute;
+	top: 10%;
+	left: 10%;
+	height: 80%;
+	width: 80%;
+	margin: 0 auto;
+	background-color: #232323;
+}
+.like-comments{
+	font-size: 14px;
+	font-family: 'Roboto-Medium';
+}
+.tabs__content-element{
+	position: relative;
+	height: 225px;
+}
+.tabs__content-img{
+	height: 100%;
+	width: 100%;
+}
+.tabs__content-element:hover{
+	& .element-description{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	}
+}
+
+.description-caption{
+	font-size: 18px;
+	font-family: 'Roboto-Medium';
+	margin-bottom: 15px;
+}
+.description-text{
+	font-size: 14px;
+	font-family: 'Roboto-Light';
+	margin-bottom: 25px;
+}
+.like-comment a{
+	color: #fff;
+}
+.like-comment span{
+	margin-left: 32px;
+	position: relative;
+	cursor: pointer;
+	font-size: 14px;
+}
+.comments:before{
+	content: '';
+	display: block;
+	position: absolute;
+	left: -29px;
+	height: 20px;
+	width: 20px;
+	background-image: url('../images/Chat.png');
+}
+.likes{
+	margin-left: 25px;
+	position: relative;
+}
+.likes:before{
+	content: '';
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -25px;
+	height: 17px;
+	width: 20px;
+	background-image: url('../images/Heart.png');
+}
+.load{
+	margin: 0 auto;
+	font-size: 16px;
+	font-family: 'Roboto-Light';
+	position: relative;
+	color: $text__color;
+}
+.load:after{
+	content: '';
+	display: block;
+	position: absolute;
+	top: 25px;
+	left: 20px;
+	height: 9px;
+	width: 33px;
+	background-image: url('../images/load.png');
+}
+
+@media(max-width: 767px){
+	.tabs__content-element{
+		height: 200px;
+	}
+	.tabs__content.active {
+	    grid-template-columns: repeat(2, 1fr);
+		grid-gap: 10px;
+	}
+	.tabs__caption li{
+		font-size: 10px;
+	}
+	.description-caption{
+	font-size: 15px;
+}
+.description-text{
+	font-size: 13px;
+	margin-bottom: 15px;
+}
+.like-comment span{
+	font-size: 12px;
+}
+}
+@media(max-width: 567px){
+	.tabs__content-element{
+		height: 150px;
+	}
+}

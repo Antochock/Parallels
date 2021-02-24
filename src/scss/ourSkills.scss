@@ -1,0 +1,115 @@
+.about__us{
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	margin: 50px 0 50px 0;
+}
+.about__us-container{
+	display: flex;
+	flex-direction: column;
+	width: 22%;
+	margin-bottom: 40px;
+}
+.about__us-container img{
+	width: 100%;
+	margin-bottom: 20px;
+}
+h6{
+	font-size: 16px;
+	font-family: 'Roboto-Medium';
+}
+.about__us-container p{
+	font-size: 13px;
+	font-family: 'Roboto-Light';
+	margin-top: 15px;
+	text-align: center;
+}
+.our__skills{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 50px 10px 70px 10px;
+}
+
+.gauge {
+  width: 100%;
+  max-width: 150px;
+  font-family: "Roboto-Medium", sans-serif;
+  font-size: 20px;
+  color: #fff;
+}
+
+.gauge__body {
+  width: 150px;
+  height: 0;
+  padding-bottom: 50%;
+  background: #424242;
+  position: relative;
+  border-top-left-radius: 100% 200%;
+  border-top-right-radius: 100% 200%;
+  overflow: hidden;
+}
+
+.gauge__fill {
+  position: absolute;
+  top: 95%;
+  left: 0;
+  width: inherit;
+  height: 100%;
+  background: linear-gradient(145deg, rgba(170,202,41,1) 0%, rgba(27,188,157,1) 100%);
+  transform-origin: center top;
+  transform: rotate(0turn);
+  transition: transform 2s ease-out;
+}
+
+.gauge__cover {
+  width: 75%;
+  height: 150%;
+  background: $main__color;
+  border-radius: 50%;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  /* Text */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 25%;
+  box-sizing: border-box;
+  font-family: 'Roboto-Bold';
+  font-size: 24px;
+}
+.gauge__description{
+	margin-top: 10px;
+	font-size: 13px;
+	font-family: 'Roboto-Medium';
+	text-transform: uppercase;
+}
+
+@media(max-width: 767px){
+	.about__us{
+		flex-wrap: wrap;
+		justify-content: space-around;
+	}
+	.about__us-container{
+		width: 40%;
+	}
+	.our__skills{
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+	.gauge {
+	margin-top: 40px;
+}
+}
+@media(max-width: 520px){
+	.about__us-container{
+		width: 70%;
+	}
+	.our__skills{
+	flex-direction: column;
+	justify-content: center;
+}
+}

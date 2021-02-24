@@ -1,0 +1,247 @@
+.container{
+    max-width: 965px; 
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+header{
+	width: 100%;
+	height: 100vh;
+}
+.header__container{
+    width: 100%;
+    background-color: #282a2e;
+}
+h1{
+	@include adaptiv-font(60,60, 1300)
+	font-family: 'Roboto-Light';
+	color: #fff;
+}
+h2{
+	font-size: 40px;
+	font-family: 'Roboto-Medium';
+	color: #fff;
+}
+.logo{
+    position: relative;
+}
+
+.logo:before{
+    content: '';
+    display: block;
+    width: 35px;
+    height: 23px;
+    position: absolute;
+    top: 4px;
+    left: 5px;
+    background-image: url("/images/logo.png");
+}
+
+.logo__text{
+    margin-left: 50px;
+    font-family: 'Roboto-Medium', sans-serif;
+    font-size: 24px;
+}
+
+.header__text {
+    height: calc(100% - 70px);
+    & .icons{
+        position: absolute;
+        display: block;
+        height: 80%;
+        bottom: 0;
+        right: 20px;
+    }
+}
+.header__text>.container{
+    height: calc(100% - 70px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+}
+
+.header__navigation{
+	width: 100%;
+	height: 70px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	color: #fff;
+}
+
+.navigation{
+	display: flex;
+	width: 60%;
+	position: relative;
+}
+.nav{
+	width: 100%;
+}
+.navbar{
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+    & img{
+        height: 16px;
+    }
+}
+.navbar > li{
+	display: flex;
+	justify-content: space-between;
+    }
+.navbar-link{
+	color: #fff;
+    font-family: 'Roboto-Regular', sans-serif;
+    font-size: 16px;
+	&:hover{
+		color: #7fa242;
+	}
+}
+
+.block-for-slider {
+    width: 100%;
+    margin: 0 auto;
+    z-index: -1;
+    position: absolute;
+    top: 70px;
+    height: 100vh;
+    }
+
+.viewport {
+    width: 100%;
+    display: table;
+    position: relative;
+    overflow: hidden;
+    user-select: none;
+}
+
+.slidewrapper {
+    position: relative;
+    width: calc(100% * 4);
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    transition: 1s;
+    transition-timing-function: ease-in-out;
+    }
+
+
+.slidewrapper li {
+    width: calc(100%/4);
+    list-style: none;
+    display: inline;
+    float: left;
+}
+
+.slide-img {
+    width: 100%;
+    height: 100vh;
+}
+#prev-btn, #next-btn {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    top: calc(50% + 50px);
+    background: url('../images/circled-right.png') no-repeat;
+    background-size: cover;
+}
+
+#prev-btn:hover, #next-btn:hover {
+    cursor: pointer;
+}
+
+#prev-btn {
+    left: 20px;
+    transform: rotate(180deg);
+}
+
+#next-btn {
+    right: 20px;
+}
+
+
+
+
+@media(max-width: 767px){
+    .header__text>.container{
+        padding: 0 5px;
+        align-items: center;
+        text-align: center;
+    }
+    .navigation__menu-burger {
+        position: absolute;
+        width: 40px;
+        height: 70px;
+        right: 20px;
+        top: -35px;
+        display: block;
+        margin-left: 10px;
+    }
+    .navigation__menu-burger.open-menu span {
+    opacity:0; 
+    transition: 0.5s; 
+}
+.navigation__menu-burger.open-menu:before {
+    transform: rotate(38deg);
+    top: 34px;
+    transition: 0.4s;
+}
+.navigation__menu-burger.open-menu:after {
+    transform: rotate(-38deg);
+    bottom: 33px;
+    transition: 0.4s;
+}
+    .navigation__menu-burger span, .navigation__menu-burger:after, .navigation__menu-burger:before{
+    height: 3px;
+    width: 100%;
+    position: absolute;
+    background: linear-gradient(145deg, rgba(170,202,41,1) 0%, rgba(27,188,157,1) 100%);
+    margin: 0 auto;
+	}
+	.navigation__menu-burger span{
+	    top: 35px;
+	}
+	.navigation__menu-burger:after, .navigation__menu-burger:before{
+	    content: '';
+	}
+	.navigation__menu-burger:after{
+	    bottom: 22px;
+	}
+	.navigation__menu-burger:before{
+	    top: 25px;
+	}
+	.navbar{
+		display: block;
+	    position: absolute;
+	    top: 35px;
+        right: 0;
+	    background-color: #282a2e;
+        opacity: 0.95;
+        overflow: auto;
+        width: 0;
+        right: -100%;
+    	transition: all 0.5s ease;
+	}
+	.navbar.open-menu{
+        width: 56%;
+        right: 0;
+	}
+	.navbar li {
+    justify-content: center;
+    font-size: 16px;
+    margin: 20px 0;
+}
+    .navbar li:hover {
+        background: linear-gradient(145deg, rgba(170,202,41,1) 0%, rgba(27,188,157,1) 100%);
+    }
+    .navbar-link:hover{
+        color: #000;
+    }
+    .header__text {
+    & .icons{
+        display: none;
+    }
+}
+
+}
